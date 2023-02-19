@@ -1,0 +1,6 @@
+[Unit]
+Description=Fan controll scrypt.
+After=multi-user.target
+
+[Service]
+Type=idle
