@@ -7,18 +7,18 @@ cd WiringOP
 ./build clean
 ./build
 cd ..
-rm -R WiringOP
+#rm -R WiringOP
 
 #Копируем скрипт
 mkdir -p $HOME/my_scripts/
-mkdir -p $HOME/my_scripts/cooler_controller/
-cp cooler_controller.sh $HOME/my_scripts/cooler_controller/
+mkdir -p $HOME/my_scripts/fan_control/
+cp cooler_controller.sh $HOME/my_scripts/fan_control/
 
 #Делаем скрипт исполняемым
-sudo chmod +x $HOME/my_scripts/cooler_controller/cooler_controller.sh
+sudo chmod +x $HOME/my_scripts/fan_control/cooler_controller.sh
 
 #Добавляем пути в юнит
-echo "ExecStart="$HOME"/my_scripts/cooler_controller/cooler_controller.sh" >> cooler_controller.service
+echo "ExecStart="$HOME"/my_scripts/fan_control/cooler_controller.sh" >> cooler_controller.service
 echo "
 [Install]
 WantedBy=multi-user.target" >> cooler_controller.service
@@ -38,4 +38,4 @@ echo "==============================[ ГОТОВО! ]===========================
 echo "Для проверки статуса службы выполнить комманду:"
 echo "	sudo systemctl status cooler_controller.service"
 echo "Скрипт установлен в: "
-echo "	cd $HOME/my_scripts/cooler_controller"
+echo "	cd $HOME/my_scripts/fan_control"
