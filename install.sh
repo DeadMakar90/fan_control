@@ -1,9 +1,6 @@
-#обновление и установка гита
-apt update
-apt install git
 #Ставим поддержку gpio
-git clone git clone https://github.com/orangepi-xunlong/wiringOP.git
-cd WiringOP
+git clone https://github.com/orangepi-xunlong/wiringOP.git
+cd wiringOP
 ./build clean
 ./build
 cd ..
